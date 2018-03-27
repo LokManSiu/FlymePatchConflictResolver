@@ -52,7 +52,7 @@ echo
 while read G  ; do
 		echo "--> Working on file: $G"
 		echo "Removing text between middle and end"
-        sed -i -s '/=======/d,/>>>>>>>/d' $G
+        sed -i -s '/=======/,/>>>>>>>/d' $G
         echo "Removing Front HEAD footer"
 		sed -i -s '/<<<<<<< HEAD/d' $G
 		echo
