@@ -5,7 +5,9 @@ Version 1.1
 
 Installation:
 -------------
-- Place in ~/bin and give 755 mode
+```
+sudo wget https://raw.githubusercontent.com/LokManSiu/GitConflictResolver/master/fixmerge -O /usr/bin/fixmerge && sudo chmod a+x /usr/bin/fixmerge
+```
 
 
 Usage:
