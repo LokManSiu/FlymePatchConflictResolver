@@ -8,9 +8,9 @@ if [[ -e /tmp/conflicts ]]; then
 fi;
 
 #HEADER
-echo "--- GIT Conflict Resolver v1.0"
-echo "-- Created by broodplank"
-echo "- broodplank.net"
+echo "--- GIT Conflict Resolver v1.1"
+echo "-- Created by LokManSiu"
+echo "- https://github.com/LokManSiu"
 echo
 echo "-> Checking for .git folder"
 echo -n "Result: "
@@ -51,10 +51,10 @@ echo "-> Fixing conflicts..."
 echo
 while read G  ; do
 		echo "--> Working on file: $G"
-		echo "Removing text between HEAD and middle"
-        sed -i -s '/<<<<<<< HEAD/,/=======/d' $G
-        echo "Removing conflict footer"
-		sed -i -s '/>>>>>>>/d' $G
+		echo "Removing text between middle and end"
+        sed -i -s '/=======/d,/>>>>>>>/d' $G
+        echo "Removing Front HEAD footer"
+		sed -i -s '/<<<<<<< HEAD/d' $G
 		echo
 done </tmp/conflicts
 
