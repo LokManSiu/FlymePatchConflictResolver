@@ -1,4 +1,4 @@
-GitConflictResolver
+FlymePatchConflictResolver
 ===================
 Version 1.1
 
@@ -6,7 +6,7 @@ Version 1.1
 Installation:
 -------------
 ```
-sudo wget https://raw.githubusercontent.com/LokManSiu/GitConflictResolver/master/fixmerge -O /usr/bin/fixmerge && sudo chmod a+x /usr/bin/fixmerge
+sudo wget https://raw.githubusercontent.com/LokManSiu/FlymePatchConflictResolver/master/fixmerge -O /usr/bin/fixmerge && sudo chmod a+x /usr/bin/fixmerge
 ```
 
 
