@@ -51,12 +51,10 @@ echo "-> Fixing conflicts..."
 echo
 while read G  ; do
 		echo "--> Working on file: $G"
-		echo "Removing Front HEAD footer"
-		sed -i -s '/<<<<<<< HEAD/d' $G
-		echo "Removing Middle Footer"
-                sed -i -s '/=======/d' $G
-	        echo "Removing End Footer"
-                sed -i -s '/>>>>>>>/d' $G
+		echo "Removing text between HEAD and middle"
+                sed -i -s '/<<<<<<< VENDOR/,/=======/d' $G
+                echo "Removing conflict footer"
+		sed -i -s '/>>>>>>> BOSP/d' $G
 		echo
 done </tmp/conflicts
 
@@ -67,16 +65,6 @@ echo "Please note:"
 echo "Although most of the conflicts can be resolved this way, It does not count for all conflicts."
 echo "If you experience errors on compiling please review the changes made"
 echo
-
-#Stage commit?
-if [[ -d ${PWD}/.git ]]; then
-	echo "Would you like to stage the commit? () [Y/n]"
-	echo -n ": "
-	read choice
-	if [[ $choice != "n" ]]; then
-		git add .
-		git commit
-	fi
 
 
 fi;
