@@ -52,9 +52,9 @@ echo
 while read G  ; do
 		echo "--> Working on file: $G"
 		echo "Removing text between HEAD and middle"
-                sed -i -s '/<<<<<<< VENDOR/,/=======/d' $G
+                sed -i -s '/<<<<<<< HEAD/,/=======/d' $G
                 echo "Removing conflict footer"
-		sed -i -s '/>>>>>>> BOSP/d' $G
+		sed -i -s '/>>>>>>>/d' $G
 		echo
 done </tmp/conflicts
 
