@@ -66,6 +66,16 @@ echo "Although most of the conflicts can be resolved this way, It does not count
 echo "If you experience errors on compiling please review the changes made"
 echo
 
+#Stage commit?
+if [[ -d ${PWD}/.git ]]; then
+	echo "Would you like to stage the commit? () [Y/n]"
+	echo -n ": "
+	read choice
+	if [[ $choice != "n" ]]; then
+		git add .
+		git commit
+	fi
+
 
 fi;
 echo
